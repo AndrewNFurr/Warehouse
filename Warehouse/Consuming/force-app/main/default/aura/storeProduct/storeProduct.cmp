@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="product" type="Product2"/>
+   
+    <lightning:recordViewForm recordId="{!v.product.Id}" objectApiName="Product2" class="slds-m-bottom_medium">
+        <div class="slds-box slds-grid slds-grid_horizontal">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Quantity__c" />
+            <lightning:button label="Make an Order"
+                              variant="brand"/>
+        </div>
+    </lightning:recordViewForm>
+</aura:component>
