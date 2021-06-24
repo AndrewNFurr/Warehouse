@@ -1,0 +1,30 @@
+<aura:component controller="WarehouseController" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="products" type="Product2[]"/>
+	<aura:attribute name="er" type="boolean" default="false"/>
+	<aura:attribute name="updatedProduct" type="Product2" default="{'sobjectType': 'Product2','Name':'','Quantity__c':0}"/>
+	
+	<!--Header Design -->
+	<lightning:layout class="slds-page-header slds-page-header_object-home">
+		<lightning:layoutItem>
+			<lightning:icon iconName="standard:scan_card" alternativeText="Inventory"/>
+		</lightning:layoutItem>
+		<lightning:layoutItem padding="horizontal-small">
+			<div class="page-section page-header">
+                <h1 class="slds-text-heading_label">Products</h1>
+                <h2 class="slds-text-heading_medium">Product Inventory</h2>
+            </div>
+        </lightning:layoutItem>
+		
+	</lightning:layout>
+	
+	<!--Update Inventory Form -->
+    <c:itemForm/>
+	<lightning:card title="Products">
+        <p class="slds-p-horizontal_small">
+            <aura:iteration items="{!v.products}" var="PerProduct">
+                <c:NarwhalProductItems product="{!PerProduct}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+</aura:component>

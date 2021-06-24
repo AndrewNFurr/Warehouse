@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:handler event="c:choseProduct" action="{!c.handleChoice}"/>
+    <aura:attribute name="updatedProduct" type="Product2"/>
+	<div>
+            <lightning:recordEditForm objectApiName="Product2"
+                                      recordId="{!v.updatedProduct.Id}"
+                                      aura:id="createReview"
+                                      class="slds-grid
+                                             slds-modal__content">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:inputField fieldName="Name" value="{!v.updatedProduct.Name}" readonly="true" />
+                    <lightning:inputField fieldName="Quantity__c" />
+                </div>
+                <div>
+                    <lightning:button class="slds-m-top_small" type="submit" label="Update Record" />
+                    <lightning:button class="slds-m-top_small" type="reset" label="Cancel" />
+                </div>
+            </lightning:recordEditForm>
+        </div>
+</aura:component>

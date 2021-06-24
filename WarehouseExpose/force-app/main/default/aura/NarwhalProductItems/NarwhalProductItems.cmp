@@ -1,0 +1,18 @@
+<!--This component is referenced in NarwhalWarehouse.cmp -->
+<aura:component controller="WarehouseController">
+    <aura:registerEvent name="choseProduct" type="c:choseProduct"/>
+    <aura:attribute name="product" type="Product2"/>
+    
+    <!--Each output attribute shows a list of current products in the database-->
+    <p>Name:
+        <lightning:formattedText value="{!v.product.Name}"/>
+    </p>
+    <p>Quantity:
+        <lightning:formattedNumber value="{!v.product.Quantity__c}"/>
+    </p>
+    <lightning:button label="Chose Product"
+                      variant="brand"
+                      onclick="{!c.clickChoseProduct}"/>
+    <br/>
+  
+</aura:component>
