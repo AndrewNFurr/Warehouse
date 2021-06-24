@@ -1,12 +1,15 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component controller="StoreListController" implements="flexipage:availableForRecordHome,force:hasRecordId">
     <aura:attribute name="product" type="Product2"/>
-   
+    <aura:attribute name="amount" type="Integer"/>
+    
     <lightning:recordViewForm recordId="{!v.product.Id}" objectApiName="Product2" class="slds-m-bottom_medium">
         <div class="slds-box slds-grid slds-grid_horizontal">
             <lightning:outputField fieldName="Name" />
             <lightning:outputField fieldName="Quantity__c" />
             <lightning:button label="Make an Order"
-                              variant="brand"/>
+                              variant="brand"
+                              onclick="{!c.clickMakeOrder}"/>
         </div>
     </lightning:recordViewForm>
+    <lightning:input type="number" name="number" label="Amount" value="{!v.amount}"/>
 </aura:component>

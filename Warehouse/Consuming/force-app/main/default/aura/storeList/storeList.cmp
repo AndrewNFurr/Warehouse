@@ -1,6 +1,7 @@
 <aura:component controller="StoreListController">
     <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
     <aura:attribute name="products" type="Product2[]"/>
+   
     <lightning:card class="slds-align_absolute-center">
         <div class="slds-grid slds-grid_vertical">
             <header class="slds-card__header slds-col">
