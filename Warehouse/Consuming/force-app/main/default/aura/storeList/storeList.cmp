@@ -1,0 +1,22 @@
+<aura:component controller="StoreListController">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="products" type="Product2[]"/>
+   
+    <lightning:card class="slds-align_absolute-center">
+        <div class="slds-grid slds-grid_vertical">
+            <header class="slds-card__header slds-col">
+                <h1>Store Products</h1>
+            </header>
+            <section class="slds-col">
+                <div id="list" class="slds-grid 
+                                      slds-grid_vertical
+                                      slds-box
+                                      slds-m-size_medium">
+                    <aura:iteration items="{!v.products}" var="product">
+                        <c:storeProduct product="{!product}"/>
+                    </aura:iteration>
+                </div>
+            </section>
+        </div>
+    </lightning:card>
+</aura:component>
